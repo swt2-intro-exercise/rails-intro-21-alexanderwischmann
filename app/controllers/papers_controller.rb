@@ -8,6 +8,9 @@ class PapersController < ApplicationController
 
   # GET /papers/1
   def show
+    @Alan = FactoryBot.create(:author)
+    @paper = FactoryBot.create(:paper)
+    @paper.authors.append(@Alan)
   end
 
   # GET /papers/new
