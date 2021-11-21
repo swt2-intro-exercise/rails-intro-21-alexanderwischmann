@@ -10,4 +10,9 @@ describe "New paper page", type: :feature do
     expect(page).to have_field('paper[venue]')
     expect(page).to have_field('paper[year]')
   end
+  it "should have an empty list of authors" do 
+    @paper = FactoryBot.create(:paper)
+    # expect(@paper).to have_attributes(authors: [])
+    expect(@paper.authors).to eq([])
+  end
 end
